@@ -1,0 +1,124 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom, #ff4d6d, #ff0000);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-family: 'Arial', sans-serif;
+    }
+     .Richison-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-bottom: 30px auto;
+            display: block;
+        }
+
+    .container {
+        text-align: center;
+        color: white;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        animation: pulse 2s infinite;
+        text-shadow: 2px 2px 6px black;
+    }
+
+    .song {
+        margin-top: 10px;
+        font-size: clamp(1rem, 4vw, 1.3rem);
+        animation: fade 3s infinite;
+    }
+
+    audio {
+        margin-top: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes fade {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    .heart {
+        position: absolute;
+        bottom: -20px;
+        color: pink;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Val’s Day Mr Richison ❤️</h1>
+   <p>You came into my life so quietly,
+But changed my world so deep inside.
+In your arms, I found my peace,
+My safe place, where fears subside.
+
+You are my prayer, my answered dream,
+My reason when my days feel long.
+On this Valentine and all my days,
+My heart is yours — forever strong.</p>
+<p> From your Love: Jess</p>
+    <div class="song">🎵 Song: Like My Father</div>
+
+    <audio controls autoplay loop>
+        <source src="Likemyfather.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+</div>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
